@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.games{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto;
+}
+
+.games h2{
+    color: #fff;
+    margin: 10px 0;
+}
+
+.games ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.games ul li{
+    list-style: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #a700ff;
+}
+
+.games ul li.active{
+    background: #a700ff;
+    color: #050e2d;
+    box-shadow: 0 0 10px #a700ff;
+}
+
+.games .cardBx{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.games .cardBx .card{
+    width: 280px;
+    border-radius: 10px;
+    margin: 20px 40px;
+    background: linear-gradient(45deg, #4f0b74, #501fda);
+    overflow: hidden;
+}
+
+.games .cardBx .card img{
+    width: 100%;
+    height: 250%;
+    object-fit: cover;
+}
+
+.games .cardBx .card .content{
+    padding: 10px;
+}
+
+.games .cardBx .card .content h4{
+    color: #fff;
+    margin: 15px;
+}
+
+.games .cardBx .card .info{
+    border-top: 2px solid #501fda;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.games .cardBx .card .info p{
+    font-size: 1em;
+    color: #fff;
+}
+
+.games .cardBx .card .info p span{
+    color: #501fda;
+}
+
+.games .cardBx .card .info a{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: 1px solid #501fda;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.games .cardBx .card .info a:hover{
+    background: #501fda;
+    border: none;
+    color: #4f0b74;
+    box-shadow: 0 0 10px #501fda;
+}
+
+.games .cardBx .card .hide{
+    display: none;
+}
+
+.hero{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #a700ff, #4d19db);
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo{
+    width: 150px;
+}
+
+nav ul{
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 15px;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn{
+    border: 2px solid #fff;
+    padding: 6px 25px;
+    border-radius: 30px;
+    margin-left: 30px;
+}
+
+.triangle1{
+    position: absolute;
+    left: 50%;
+    top: -180px;
+    transform: translateX(-50%);
+    width: 400px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.triangle2{
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 400px;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.circle{
+    position: absolute;
+    right: -100px;
+    bottom: -300px;
+    width: 500px;
+    z-index: -1;
+    opacity: 0.5;
+}

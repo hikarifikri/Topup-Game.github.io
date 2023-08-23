@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .hero{
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #a700ff, #4d19db);
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        nav{
+            display: flex;
+            align-items: center;
+            padding: 30px 0;
+        }
+        
+        .logo{
+            width: 150px;
+        }
+        
+        nav ul{
+            flex: 1;
+            text-align: right;
+        }
+        
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 0 15px;
+        }
+        
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .triangle1{
+            position: absolute;
+            left: 50%;
+            top: -180px;
+            transform: translateX(-50%);
+            width: 400px;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .triangle2{
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .circle{
+            position: absolute;
+            right: -100px;
+            bottom: -300px;
+            width: 500px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        body{
+            background: #000718; 
+        }
+        body, input,textarea, a{
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        #section-wrapper{
+            width: 100%;
+            padding: 10px;
+        }
+        .box-wrapper{
+            position: relative;
+            display: table;
+            width:1100px;
+            margin:auto;
+            margin-top:35px;
+            border-radius: 30px;
+        }
+        .info-wrap{
+            width:35%;
+            height: 551px;
+            padding: 40px;
+            float: left;
+            display: block;
+            border-radius: 30px 0px 0px 30px;
+            background: linear-gradient(144deg, rgba(126,39,156,1) 0%, rgba(49,39,157,1) 49%);
+            color: #fff;
+        }
+        .info-title{
+            text-align: left;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+        .info-sub-title{
+            font-size: 18px;
+            font-weight: 300;
+            margin-top: 17px;
+            letter-spacing: 0.5px;
+            line-height: 26px;
+        }
+        .info-details {
+            list-style: none;
+            margin: 60px 0px;
+        }
+        .info-details li {
+            margin-top: 25px;
+            font-size: 18px;
+            color: #fff;
+        }
+        .info-details li i {
+            background: #F44770;
+            padding: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .info-details li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .info-details li a:hover {
+            color: #F44770;
+        }
+        .social-icons {
+            list-style: none;
+            text-align: center;
+            margin: 20px 0px;
+        }
+        .social-icons li {
+            display: inline-block;
+        }
+        .social-icons li i {
+            background: #F44770;
+            color: #fff;
+            padding: 15px;
+            font-size: 20px;
+            border-radius: 22%;
+            margin: 0px 5px;
+            cursor: pointer;
+            transition: all .5s;
+        }
+        .social-icons li i:hover {
+            background: #fff;
+            color: #000000;
+        }
+        .form-wrap{
+            width:65%;
+            float: right;
+            padding:40px 25px 35px 25px;
+            border-radius: 0px 30px 30px 0px;
+            background: #ecf0f3;
+        }
+        .form-title{
+            text-align: left;
+            color: #000000;
+            margin-left: 23px;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+        .form-fields{
+            display: table;
+            width: 100%;
+            padding: 15px 5px 5px 5px;
+        }
+        .form-fields input,
+        .form-fields textarea{
+            border: none;
+            outline:none;
+            background: none;
+            font-size: 18px;
+            color:#555;
+            padding: 20px 10px 20px 5px;
+            width:100%
+        }
+        .form-fields textarea{
+            height: 150px;
+            resize: none;
+        }
+        .form-group{
+            width: 46%;
+            float: left;
+            padding: 0px 30px;
+            margin: 14px 12px;
+            border-radius: 25px;
+            box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+        }
+        .form-fields .form-group:last-child {
+            width: 96%;
+        }
+        .submit-button{
+            width: 96%;
+            height: 60px;
+            margin: 0px 12px;
+            border-radius: 30px;
+            font-size: 20px;;
+            font-weight: 700;
+            outline: none;
+            border:none;
+            cursor: pointer;
+            color:#fff;
+            text-align: center;
+            background: #F44770;
+            box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
+            transition: .5s;
+        }
+        .submit-button:hover{
+            background: #31279d;
+        }
+        
+        
+        /* Responsive css */
+        
+        @media only screen and (max-width: 767px) {
+            .box-wrapper{
+                width: 100%;
+            }
+            .info-wrap,
+            .form-wrap{
+                width: 100%;
+                height: inherit;
+                float: none;  
+            }
+            .info-wrap{
+                border-radius: 30px 30px 0px 0px;
+            }
+            .form-wrap{
+                border-radius: 0px 0px 30px 30px;
+            }
+            .form-group{
+                width: 100%;
+                float: none;
+                margin: 25px 0px;
+            }
+            .form-fields .form-group:last-child, 
+            .submit-button{
+                width: 100%;
+            }
+            .submit-button{
+                margin: 10px 0px;
+            }
+           
+        }
+        
+            
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+    <title>Top-Up Game</title>
+</head>
+<body>
+    <div class="hero">
+        <img src="/game/pc/triangle-top.png" class="triangle1">
+        <img src="/img/triangle-left.png" class="triangle2">
+        <img src=" /img/circle.png" class="circle">
+        <nav>
+            <img src="/img/logo.png" class="log">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/game/game.html">Game</a></li>
+                <li><a href="/about/about.html">About Us</a></li>
+                <li><a href="">Contact</a></li>
+            </ul> 
+            <a href="../game/game.html" class="btn">Top up</a>
+        </nav>
+
+        <!-- About -->
+        <section id="section-wrapper">
+            <div class="box-wrapper">
+                <div class="info-wrap">
+                    <h2 class="info-title">Contact Information</h2>
+                    <h3 class="info-sub-title">Fill up the form and our Team will get back to you within 24 hours</h3>
+                    <ul class="info-details">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>Phone:</span> <a href="tel:+628 5171132505">+628 5171132505</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Email:</span> <a href="mailto:topupgame@gmail.com">topup@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe"></i>
+                            <span>Website:</span> <a href="#">Top-UpGame.com</a>
+                        </li>
+                    </ul>
+                    <ul class="social-icons">
+                        <li><a href="https://www.instagram.com/official.unsika/?hl=id"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="form-wrap">
+                    <form action="#">
+                        <h2 class="form-title">Send us a message</h2>
+                        <div class="form-fields">
+                            <div class="form-group">
+                                <input type="text" class="fname" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="lname" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="email" placeholder="Mail">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="" placeholder="Write your message"></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" value="Send Message" class="submit-button"> <a href="/contact/contact.html"></a>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+    <script src="/script.js"></script>
+</body>
+</html>

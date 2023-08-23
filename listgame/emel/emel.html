@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Top-Up Game</title>
+  <link rel="stylesheet" href="emel.css">
+</head>
+<body>
+  <div class="hero">
+    <img src="./triangle-top.png" class="triangle1">
+    <img src="./triangle-left.png" class="triangle2">
+    <img src="./circle.png" class="circle">
+    <nav>
+        <img src="./logo.png" class="log">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/game/game.html">Game</a></li>
+            <li><a href="/about/about.html">About Us</a></li>
+            <li><a href="/contact/contact.html">Contact</a></li>
+        </ul> 
+        <a href="" class="btn">Top up</a>
+    </nav>
+
+    <form action="#" method="POST">
+      <div class="login-box">
+        <label for="username">Masukkan username:</label>
+        <input type="text" id="username" name="username" required>
+        <div class="diamond-wrapper">
+          <div class="diamond">
+            <p>200 Diamonds</p>
+            <p>Rp. 10,000</p>
+            <img src="diamondemel.png" alt="Diamond 100">
+          </div>
+          <div class="diamond">
+            <p>300 Diamonds</p>
+            <p>Rp. 20,000</p>
+            <img src="diamondemel.png" alt="Diamond 500">
+          </div>
+          <div class="diamond">
+            <p>1000 Diamonds</p>
+            <p>Rp. 30,000</p>
+            <img src="diamondemel.png" alt="Diamond 1000">
+          </div>
+          <div class="diamond">
+            <p>5000 Diamonds</p>
+            <p>Rp. 50,000</p>
+            <img src="diamondemel.png" alt="Diamond 5000">
+          </div>
+          <div class="diamond">
+            <p>6000 Gems</p>
+            <p>Rp. 90,000</p>
+            <img src="diamondemel.png" alt="Diamond 5000">
+          </div>
+          <div class="diamond">
+            <p>8000 Gems</p>
+            <p>Rp. 100,000</p>
+            <img src="diamondemel.png" alt="Diamond 5000">
+          </div>
+        </div>
+        <div id="login_button">
+          <a href="#" onclick="openPopup()">Top Up</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h3>Username</h3>
+      <p id="username-info"></p>
+      <h3>Diamond</h3>
+      <p id="diamond-info"></p>
+      <h3>Harga</h3>
+      <p id="price-info"></p>
+
+      
+    <h3>Metode Pembayaran</h3>
+    <select id="payment-method">
+      <option value="Dana">Dana</option>
+      <option value="Gopay">Gopay</option>
+      <option value="Ovo">Ovo</option>
+    </select>
+
+        <div id="payment-button">
+          <button onclick="pay()">Bayar</button>
+        </div>
+      </div>      
+
+      <div class="popup" id="proses-popup">
+        <div class="popup-mantap">
+          <span class="close-btn" onclick="closeProsesPopup()">&times;</span>
+          <h3>Memproses Pembayaran</h3>
+          <p>Username: <span id="username-info-proses"></span></p>
+          <p>Diamond: <span id="diamond-info-proses"></span></p>
+          <p>Harga: <span id="price-info-proses"></span></p>
+          <p>Metode Pembayaran: <span id="payment-method-info-proses"></span></p>
+          <P>Status Pembayaran: Pending</P>
+          <button onclick="lanjutkan()">Lanjutkan</button>
+
+        </div>
+      </div>
+
+      <div class="popup" id="success-popup">
+        <div class="popup-content">
+          <span class="close-btn" onclick="closeSuccessPopup()">&times;</span>
+          <h3>Pembayaran Berhasil</h3>
+          <p>Status Pembayaran: Berhasil</p>
+          <img src="berhasil.png" alt="Gambar Pembayaran Berhasil">
+          <button class="back-to-menu-button" onclick="backToMenu()">Kembali ke Menu</button>
+        </div>
+      </div>
+      
+
+    <script>
+
+  document.addEventListener("DOMContentLoaded", function () {
+    var diamondWrappers = document.querySelectorAll(".diamond-wrapper .diamond");
+    var topUpButton = document.getElementById("login_button").getElementsByTagName("a")[0];
+
+    function openPopup() {
+      var username = document.getElementById("username").value;
+      var selectedDiamond = document.querySelector(".diamond.selected");
+
+      if (!username) {
+        alert("Tolong isi username terlebih dahulu");
+        return;
+      }
+
+      if (!selectedDiamond) {
+        alert("Pilih diamond terlebih dahulu");
+        return;
+      }
+
+      document.getElementById("popup").classList.add("active");
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("username-info").textContent = "" + username;
+
+      var diamondValue = selectedDiamond.querySelector("p").textContent;
+      document.getElementById("diamond-info").textContent = "" + diamondValue;
+
+      var diamondPrice = selectedDiamond.querySelector("p:nth-of-type(2)").textContent;
+      document.getElementById("price-info").textContent = "" + diamondPrice;
+    }
+
+    function closePopup() {
+      document.getElementById("popup").classList.remove("active");
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function closeProsesPopup() {
+      document.getElementById("proses-popup").style.display = "none";
+    }
+
+    function pay() {
+      var paymentMethod = document.getElementById("payment-method").value;
+      document.getElementById("proses-popup").style.display = "block";
+      document.getElementById("username-info-proses").textContent = document.getElementById("username-info").textContent;
+      document.getElementById("diamond-info-proses").textContent = document.getElementById("diamond-info").textContent;
+      document.getElementById("price-info-proses").textContent = document.getElementById("price-info").textContent;
+      document.getElementById("payment-method-info-proses").textContent = paymentMethod;
+    }
+
+    document.getElementsByClassName("close-btn")[1].addEventListener("click", closeProsesPopup);
+
+    diamondWrappers.forEach(function (diamond) {
+      diamond.addEventListener("click", function () {
+        var selectedDiamond = document.querySelector(".diamond.selected");
+        if (selectedDiamond) {
+          selectedDiamond.classList.remove("selected");
+        }
+        this.classList.add("selected");
+      });
+    });
+
+    document.getElementById("login_button").addEventListener("click", openPopup);
+    document.getElementsByClassName("close-btn")[0].addEventListener("click", closePopup);
+    document.getElementsByClassName("close-btn")[1].addEventListener("click", closeProsesPopup);
+    document.getElementById("payment-button").getElementsByTagName("button")[0].addEventListener("click", pay);
+
+    function validateInput() {
+      var username = document.getElementById("username").value;
+      var selectedDiamond = document.querySelector(".diamond.selected");
+
+      if (!username || !selectedDiamond) {
+        topUpButton.style.pointerEvents = "none";
+        topUpButton.style.opacity = "0.5";
+      } else {
+        topUpButton.style.pointerEvents = "auto";
+        topUpButton.style.opacity = "1";
+      }
+    }
+
+    document.getElementById("username").addEventListener("input", validateInput);
+    diamondWrappers.forEach(function (diamond) {
+      diamond.addEventListener("click", validateInput);
+    });
+  });
+
+  function lanjutkan() {
+
+  var prosesPopup = document.getElementById("proses-popup");
+  prosesPopup.style.display = "none";
+
+  window.open('https://gopay.co.id/cara-top-up', '_blank');
+
+  var successPopup = document.getElementById("success-popup");
+  successPopup.classList.add("active");
+
+
+  var usernameInfo = document.getElementById("username-info-proses").textContent;
+  var diamondInfo = document.getElementById("diamond-info-proses").textContent;
+  var priceInfo = document.getElementById("price-info-proses").textContent;
+  var paymentMethodInfo = document.getElementById("payment-method-info-proses").textContent;
+
+
+  document.getElementById("success-username-info").textContent = usernameInfo;
+  document.getElementById("success-diamond-info").textContent = diamondInfo;
+  document.getElementById("success-price-info").textContent = priceInfo;
+  document.getElementById("success-payment-method-info").textContent = paymentMethodInfo;
+}
+
+function backToMenu() {
+  window.location.href = '/index.html';
+}
+
+
+
+    </script>
+
+  </body>
+  </html>
+  
+
+

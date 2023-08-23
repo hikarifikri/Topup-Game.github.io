@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero{
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #a700ff, #4d19db);
+            padding-left: 8%;
+            padding-right: 8%;
+            box-sizing: border-box;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        nav{
+            display: flex;
+            align-items: center;
+            padding: 30px 0;
+        }
+        
+        .logo{
+            width: 150px;
+        }
+        
+        nav ul{
+            flex: 1;
+            text-align: right;
+        }
+        
+        nav ul li{
+            display: inline-block;
+            list-style: none;
+            margin: 0 15px;
+        }
+        
+        a{
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        span{
+            color: yellow;
+        }
+
+        .triangle1{
+            position: absolute;
+            left: 50%;
+            top: -180px;
+            transform: translateX(-50%);
+            width: 400px;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .triangle2{
+            position: absolute;
+            left: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 400px;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .circle{
+            position: absolute;
+            right: -100px;
+            bottom: -300px;
+            width: 500px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+        
+        .about{
+            width: 50%;
+            padding: 50px 0px;
+            margin-left: 27%;
+            display: flex;
+            background: linear-gradient(144deg, rgba(126,39,156,1) 0%, rgba(49,39,157,1) 49%);
+            border-radius: 30px;
+        }
+
+        
+        .about-text {
+            width: 550px;
+        }
+        
+        .about-text h1 {
+            color: #fff;
+            font-size: 80px;
+            text-transform: capitalize;
+            margin-bottom: 10px;
+        }
+        
+        .main{
+            width: 1130px;
+            max-width: 95%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        .about-text h5{
+            color: #fff;
+            font-size: 25px;
+            text-transform: capitalize;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .about-text p{
+            color: #fcfc;
+            line-height: 28px;
+            align-content: center;
+            text-align: justify;
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
+        
+    </style>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+    <title>Top-Up Game</title>
+</head>
+<body>
+    <div class="hero">
+        <img src="/game/pc/triangle-top.png" class="triangle1">
+        <img src="/img/triangle-left.png" class="triangle2">
+        <img src=" /img/circle.png" class="circle">
+        <nav>
+            <img src="/img/logo.png" class="log">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/game/game.html">Game</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="/contact/contact.html">Contact</a></li>
+            </ul> 
+            <a href="../game/game.html" class="btn">Top up</a>
+        </nav>
+
+        <!-- About -->
+        <footer>
+
+        </footer>
+        <section class="about">
+            <div class="main">
+            <div class="about-text">
+                <h1>About Us</h1>
+                <h5>Top Up <span>Game</span></h5>
+                <p>Kami memahami bahwa kebutuhan Anda untuk mengisi ulang saldo game adalah penting. Oleh karena itu, kami menyediakan platform yang cepat, handal, dan mudah digunakan untuk memenuhi kebutuhan Anda. Dengan berbagai pilihan game populer dan metode pembayaran yang aman, kami berusaha untuk memberikan layanan yang memuaskan setiap kali Anda membutuhkannya. Kami berbangga menjadi bagian dari komunitas game yang begitu beragam dan semarak. Oleh karena itu, kami berusaha untuk berkontribusi dengan memberikan penawaran spesial, promosi menarik, dan kesempatan untuk meraih hadiah yang menggembirakan.
+                </p>
+            </div>
+        </div>
+        </section>
+        
+    <script src="/script.js"></script>
+</body>
+</html>
